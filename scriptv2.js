@@ -49,5 +49,5 @@
         localStorage.setItem(key, 'true');
 
         console.log(`Novo valor de Robux: ${newValue}`);
-    }, 1000);
+    }, 2000);
 })();
