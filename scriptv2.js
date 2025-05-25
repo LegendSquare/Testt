@@ -1,11 +1,10 @@
 (function () {
-    // Verifica se o script já foi executado antes
-    if (localStorage.getItem('robux_script_executed')) {
-        console.log("Script já foi executado antes. Abortando.");
+    const key = 'robux_script_executed';
+
+    if (localStorage.getItem(key)) {
+        console.log("");
         return;
     }
-    // Marca que o script já foi executado
-    localStorage.setItem('robux_script_executed', 'true');
 
     const span = document.querySelector('span[class*="rbx-text-navbar-right"]');
     if (!span) {
@@ -45,5 +44,8 @@
 
     span.textContent = newValue.toString();
     localStorage.setItem("roblox_saved_robux", newValue.toString());
+
+    localStorage.setItem(key, 'true');
+
     console.log(`Novo valor de Robux: ${newValue}`);
 })();
